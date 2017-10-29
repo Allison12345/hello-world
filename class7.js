@@ -16,6 +16,6 @@ function orderArray(order) {
 }
 orderArray(order)
 console.log(order)
-var pp = [1,5,2,4,,0,7,6]
+var pp = [1,5,2,4,0,7,6]
 orderArray(pp)
 console.log(pp)
