@@ -9,6 +9,8 @@ switch (i) {
   case 10:
     console.log(10)
     break
+  case 3:
+  console.log(3)
   default:
     console.log('default')
 }
