@@ -1,22 +1,24 @@
 var obj = { a: 'custom' }
 var a = 'global'
 function whatsthis(arg) {
-  return this.a
+  console.log('a:', this.a, '; arg:', arg)
 }
 whatsthis()
-whatsthis.call(obj)
-whatsthis.apply(obj)
+whatsthis.call(obj, 'call arg1', 'call arg2')
+whatsthis.call(obj, ['apply arg1', 'apply arg2'])
+// whatsthis.apply(obj, 'call arg1', 'call arg2')
+whatsthis.apply(obj, ['apply arg1', 'apply arg2'])
 
 function add(c, d) {
-  return this.a + this.b + c + d
+  console.log(this.a + this.b + c + d)
 }
 var o = { a: 1, b: 3 }
 add.call(o, 5, 7)
 add.apply(o, [10, 20])
+
 function f() {
   return this.a
 }
-
 var g = f.bind({ a: 'azery' })
 console.log(g())
 var h = f.bind({ a: 'yoo' })
