@@ -8,8 +8,21 @@ var students = [
 
 function mySort(array, key, flag) {
   array.sort(function(a, b) {
-   return flag ? a[key] - b[key] : b[key] - a[key]
+    return flag ? a[key] - b[key] : b[key] - a[key]
   })
   return array
-  }
-console.log(mySort(students, 'tall',false))
+}
+console.log(mySort(students, 'tall', false))
+
+var s = students.filter(function(x) {
+  return x.age < 20
+})
+var a = s.map(function(x) {
+  return x.name
+})
+console.log(a)
+var sum = students.reduce(function(x, y) {
+  return x+ y.tall
+},0 )
+var average = (sum/students.length).toFixed(2)
+console.log(average)
