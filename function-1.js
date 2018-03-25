@@ -30,10 +30,20 @@ function factorial1(n) {
   }
   return product
 }
-function factorial2(n){
-    var i ,product = 1
-    for(i=2;i<=n;i++ ){
-        product *= i
-    }
-    return product
+function factorial2(n) {
+  var i,
+    product = 1
+  for (i = 2; i <= n; i++) {
+    product *= i
+  }
+  return product
 }
+function point(x, y) {
+  this.x = x
+  this.y = y
+}
+var p = new point(1, 1)
+point.prototype.r = function() {
+  return Math.sqrt(this.x * this.x + this.y * this.y)
+}
+console.log(p.r())
