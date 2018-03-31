@@ -92,6 +92,40 @@
             </td>
         </tr>
     </table>
+    <script>
+        function calculate() {
+            var amount = document.getElementById("amount")
+            var apr = document.getElementById("apr")
+            var years = document.getElementById("year")
+            var zipcode = document.getElementById("zipcode")
+            var payment = document.getElementById("payment")
+            var total = document.getElementById("total")
+            var totalinterst = document.getElementById("totalininterst")
+
+            var principal = parseFloat(amount.value)
+            var interst = parseFloat(apr.value) / 100 / 12
+            var payments = parseFloat(years.value) * 12
+
+            var x = Math.pow(1 + interst, payments)
+            var Monthly = (principal * x * interst) * (x - 1)
+
+            if (isFinite(Monthly)) {
+                payment.innerHTML = Monthly.toFixed(2)
+                total.innerHTML = (Monthly * payments).toFixed(2)
+                totalinterst.innerHTML = ((Monthly * payment) - principal).toFixed(2)
+                save(amount.value, apr.value, years.value, zipcode.value)
+                try { getLenders(amount.value, apr.value, years.value, zipcode.value) }
+                catch (e) { }
+                chart(principal, interst, Monthly, payments)
+            } else {
+                payment.innerHTML = ""
+                total.innerHTML = ""
+                totalinterst.innerHTML = ""
+                chart()
+            }
+        }
+
+    </script>
 </body>
 
 </html>
