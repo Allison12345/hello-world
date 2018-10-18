@@ -24,14 +24,17 @@ function subtract(o, p) {
   }
   return o
 }
-function union(o,p){return extend(extend({},o),p)}
-function intersection(o,p){return restrict(extend({},o),p)}
-function keys(o){
-    if (typeof o !== "object") throw TypeError
-    var result = []
-    for(prop in o){
-    if (o.hasOwnProperty(prop))
-    result.push(prop)
+function union(o, p) {
+  return extend(extend({}, o), p)
 }
-return result
+function intersection(o, p) {
+  return restrict(extend({}, o), p)
+}
+function keys(o) {
+  if (typeof o !== 'object') throw TypeError()
+  var result = []
+  for (prop in o) {
+    if (o.hasOwnProperty(prop)) result.push(prop)
+  }
+  return result
 }
