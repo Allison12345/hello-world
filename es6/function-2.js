@@ -80,3 +80,5 @@ var sum1 = tco(function(x, y) {
   }
 })
 console.log(sum1(1, 100000))
+
+function clownsEverywhere(param1, param2,) {}
