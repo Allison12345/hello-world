@@ -174,4 +174,4 @@ console.log(contains(['foo', 'bar'], 'baz'))
 //console.log([1,2,[3,4]].flat())
 //console.log([1,2,[3,[4,5]]].flat(2))
 
-console.log([2,3,4].flatMap((x) => [x,x*2]))
+//console.log([2,3,4].flatMap((x) => [x,x*2]))
