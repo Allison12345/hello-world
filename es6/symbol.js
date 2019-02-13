@@ -227,4 +227,5 @@ class MySearch {
     return string.indexOf(this.value)
   }
 }
-console.log('aa'.search(new MySearch('foo')))
+console.log('foobar'.search(new MySearch('foo')))
+
