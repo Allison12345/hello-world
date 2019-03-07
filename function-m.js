@@ -80,10 +80,8 @@ var fatorial = function(x) {
   if (x <= 1) return 1
   return x * arguments.callee(x - 1)
 }
-function arraycopy(from, from_start, to, to_start) {
-
-}
- function esaycopy(args) {
+function arraycopy(from, from_start, to, to_start) {}
+function esaycopy(args) {
   arraycopy(
     args.from,
     args.from_start || 0,
@@ -92,5 +90,32 @@ function arraycopy(from, from_start, to, to_start) {
     args.length
   )
 }
-var a =[1,2,3,4,5] ,b = []
-esaycopy({from:a,to:b,length:4})
+var a = [1, 2, 3, 4, 5],
+  b = []
+esaycopy({ from: a, to: b, length: 4 })
+
+function sum(a) {
+  if (isArrayLike(a)) {
+    var total = 0
+    for (var i = 0; i < a.length; i++) {
+      var elements = a[i]
+      if (elements == null) coutinue
+      if (isFinite(elements)) total += elements
+      else throw new Error('sum() : elements mut be finite numbers')
+    }
+    return total
+  } else throw new Error('')
+}
+function flexisum(a) {
+  var total = 0
+  for (var i = 0; i < a.length; i++) {
+    var elements = arguments[i],n
+    if (elements == null) coutinue
+    if (isArray(elements)) n = flexisum.apply(this, elements)
+    else if (typeof elements === 'function') n = Number(elements())
+    else n = Number(elements)
+    if (isNaN(n)) throw Error('')
+    total += n
+  }
+  return total
+}
