@@ -109,7 +109,8 @@ function sum(a) {
 function flexisum(a) {
   var total = 0
   for (var i = 0; i < a.length; i++) {
-    var elements = arguments[i],n
+    var elements = arguments[i],
+      n
     if (elements == null) coutinue
     if (isArray(elements)) n = flexisum.apply(this, elements)
     else if (typeof elements === 'function') n = Number(elements())
