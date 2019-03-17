@@ -8,15 +8,32 @@ for (var i = 0; i < 4; i++) {
   test()
 }
 console.log(test())
-
+console.log('\n---test1---')
 function test1() {
   var data = [],
-    i
-  for (var i = 0; i < 4; i++) {
+    i = 0
+  for (; i < 4; i++) {
     data[i] = function() {
       console.log(i)
     }
-    return data[0]
   }
+  console.log('i:', i)
+  return data[3]
 }
-console.log(test1()())
+test1()()
+console.log('\n---test2---')
+function test2() {
+  var data = [],
+    i = 0
+  for (; i < 4; i++) {
+    function fn(x) {
+      return function() {
+        console.log(x)
+      }
+    }
+    data[i] = fn(i)
+  }
+  console.log('i:', i)
+  return data[3]
+}
+test2()()
