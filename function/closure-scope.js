@@ -34,7 +34,8 @@ function counter() {
     }
   }
 }
-const c = counter() ,d = counter()
+const c = counter(),
+  d = counter()
 
 console.log(c.count())
 console.log(c.count())
@@ -42,17 +43,3 @@ console.log(d.count())
 console.log(d.count())
 console.log(c.reset())
 console.log(c.count())
-
-function counter1(n){
-  return {
-    get count(){
-      return n++
-    },
-    set count(m){
-      if(m>=n) n= m
-      else throw Error('')
-    }
-  }
-}
-const e = counter1(1000)
-console.log(e.count)
