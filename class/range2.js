@@ -3,6 +3,7 @@ this.from = from
 this.to = to
 }
 Range.prototype = {
+  constructor: Range,
   includes: function(x){
     return this.from <= x && x <= this.to
   },
