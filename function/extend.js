@@ -34,7 +34,6 @@ function GirlStudent() {
 }
 
 GirlStudent.prototype = new Student(100)
-const girl = new GirlStudent()
 girl.setName('Aijiao')
 girl.printScore()
 girl.sayHi()
