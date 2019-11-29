@@ -79,8 +79,39 @@ console.log(longestOnesA.length)
 
 var numJewelsInStones = function(J, S) {
   let [Jrr, Srr] = [J.split(''), S.split('')]
-  return Srr.filter(i => J.indexOf(i) !== -1).length
+  //Jrr.indexOf(i) !== -1
+  return Srr.filter(i => Jrr.indexOf(i) !== -1).length
 }
 const J = 'aA',
   S = 'aAAbbbb'
 console.log(numJewelsInStones(J, S))
+
+var suggestedProducts = function(products, searchWord) {
+  let result = []
+  for (var i = 0; i < searchWord.length; i++) {
+    let tem = []
+    let str = searchWord.slice(0, i + 1)
+    for (var j = 0; j < products.length; j++) {
+      if (str != '' && products[j].indexOf(str) == 0) tem.push(products[j])
+    }
+    tem.sort()
+    result.push(tem.slice(0, 3))
+  }
+  return result
+}
+const products = ['mobile', 'mouse', 'moneypot', 'monitor', 'mousepad'],
+  searchWord = 'mouseI'
+console.log(suggestedProducts(products, searchWord))
+
+var deleteNode = function(node) {
+  node.val = node.next.val
+  node.next = node.next.next
+}
+function createLinkList(list) {
+  for (var i = 0; i < list.length; i++) {
+    list[i]
+  }
+}
+const head = [4, 5, 1, 9],
+  node = (5)[(4, 1, 9)]
+console.log(node)
